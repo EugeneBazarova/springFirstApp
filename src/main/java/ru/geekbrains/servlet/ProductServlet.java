@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @WebServlet(name = "ProductServlet", urlPatterns = "/products")
 public class ProductServlet extends HttpServlet {
-    private static Logger logger = LoggerFactory.getLogger(BasicServlet.class);
+    private static Logger logger = LoggerFactory.getLogger(ProductServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
