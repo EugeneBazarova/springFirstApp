@@ -5,6 +5,8 @@ public class Product {
     private String title;
     private int cost;
 
+    private ProductRep productRep;
+
     public Product(int id, String title, int cost) {
         this.id = id;
         this.title = title;
@@ -33,5 +35,9 @@ public class Product {
 
     public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public Product getById(int id) {
+        return productRep.findProductById(id);
     }
 }
