@@ -5,7 +5,7 @@ public class Product {
     private String title;
     private int cost;
 
-    private ProductRep productRep;
+    private ProductRepository productRepository;
 
     public Product(int id, String title, int cost) {
         this.id = id;
@@ -38,6 +38,6 @@ public class Product {
     }
 
     public Product getById(int id) {
-        return productRep.findProductById(id);
+        return productRepository.findProductById(id);
     }
 }
