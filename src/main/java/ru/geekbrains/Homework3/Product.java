@@ -1,19 +1,27 @@
 package ru.geekbrains.Homework3;
 
 public class Product {
-    private int id;
+    private Integer id;
     private String title;
-    private int cost;
+    private Integer cost;
 
-    public Product(int id, String title, int cost) {
+    public Product(Integer id, String title, Integer cost) {
 
     }
 
-    public void setId(int id) {
+    public Product() {
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getId(int id) {
+    public int getId(Integer id) {
         return id;
     }
 
@@ -25,16 +33,15 @@ public class Product {
         this.title = title;
     }
 
-    public float getCost() {
+    public float getCost(Integer cost) {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(Integer cost) {
         this.cost = cost;
     }
 
-    Override
-
+    @Override
     public boolean equals(Object object) {
         if (this == object)
             return true;
@@ -48,5 +55,17 @@ public class Product {
                 return false;
         } else if (!id.equals(smth.id))
             return false;
+        if (cost == null) {
+            if (smth.cost != null)
+                return false;
+        } else if (!cost.equals(smth.cost))
+            return false;
+        if (title == null) {
+            if (smth.title != null)
+                return false;
+        } else if (!title.equals(smth.title))
+            return false;
+        return true;
     }
+
 }

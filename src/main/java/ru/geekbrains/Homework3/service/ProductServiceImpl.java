@@ -16,7 +16,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getID(int id) {
+    public void saveSearch(Product product) {
+        if (product != null) {
+            List<Product> productList = productRepository.allProducts();
+            if (!productList.isEmpty()) {
+                Product curProducts = productList.get(productList.size() - 1);
+                product.setId(curProducts.getId() + 1);
+                productRepository.saveSearch(product);
+            }
+        }
+    }
+
+    @Override
+    public Product getID(Integer id) {
         if (id != null) {
             return productRepository.getID(id);
         }

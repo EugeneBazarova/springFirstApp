@@ -26,7 +26,12 @@ public class ProductRepositoryImpl implements ProductRepository {
         return productList;
     }
 
-    public Product getID(int id) {
+    public Product getID(Integer id) {
         return productList.get(id);
     }
+
+    public void saveSearch(Product product) {
+        productList.add(product);
+    }
+
 }
