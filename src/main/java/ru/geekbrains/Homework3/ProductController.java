@@ -15,7 +15,7 @@ import java.util.List;
 public class ProductController {
     private ProductService productService = new ProductServiceImpl();
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/product", method = RequestMethod.GET)
     public String productPage(Model model) {
         List<Product> productList = productService.allProducts();
         model.addAttribute("productList", productList);
